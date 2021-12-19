@@ -1,3 +1,11 @@
+@keyframes intro-content-fade-in
+  0%
+    transform: translateX(25%)
+    opacity: 0
+  100%
+    transform: translateX(0)
+    opacity: 1
+  
 .c-intro
   text-align: center
   @media (min-width: $breakpoint-desktop)
@@ -7,7 +15,9 @@
   font: 500 2.5rem/2.9375rem $font-family
   margin-bottom: 1.5rem
   color: $color-american-purple
+  animation: 0.5s ease-in-out 0.25s intro-content-fade-in both
 
 .c-intro-text
   font: 400 1rem/1.75rem $font-family
   color: $color-heliotrope-gray
+  animation: 0.5s ease-in-out 0.25s intro-content-fade-in both

@@ -1,3 +1,11 @@
+@keyframes phone-fade-in
+  0%
+    transform: translateY(-3.5rem)
+    opacity: 0
+  100%
+    transform: translateY(0)
+    opacity: 1
+  
 .c-phone
   position: relative
   width: 15.4375rem
@@ -5,6 +13,7 @@
   border-radius: 1.875rem
   background-color: $color-white
   box-shadow: 0 1.875rem 3.75rem -0.625rem rgba($color-american-purple, 0.251202)
+  animation: 0.35s ease-in-out 0.1s phone-fade-in both
 
 .c-phone::before
   content: ""

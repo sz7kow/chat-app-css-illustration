@@ -1,6 +1,13 @@
 .c-message
   font: 400 0.5rem/0.6875rem $font-family
   margin-bottom: 0.5rem
+  animation-duration: 0.5s
+  animation-timing-function: ease-in-out
+  animation-fill-mode: both
+
+@for $i from 1 through 8
+  .c-message:nth-child(3n + #{$i}) 
+    animation-delay: 0.1s * $i
 
 .c-message--text
   max-width: 8rem
@@ -10,13 +17,31 @@
   max-width: 8.5rem
   margin-top: 0.5rem
 
+@keyframes recieved-message-fade-in
+  0%
+    transform: translate(1.5rem, 0.5rem)
+    opacity: 0
+  100%
+    transform: translate(0, 0)
+    opacity: 1
+
 .c-message--recieved
   align-self: start
   border-radius: 0.625rem 0.625rem 0.625rem 0.25rem
+  animation-name: recieved-message-fade-in
+
+@keyframes send-message-fade-in
+  0%
+    transform: translate(-1.5rem, -0.5rem)
+    opacity: 0
+  100%
+    transform: translate(0, 0)
+    opacity: 1
 
 .c-message--sent
   align-self: flex-end
   border-radius: 0.625rem 0.625rem 0.25rem 0.625rem
+  animation-name: send-message-fade-in
 
 .c-message--recieved.c-message--text
   color: $color-dark-orchid
